@@ -1,4 +1,4 @@
-# Project Name_Sen
+# Project Name_Senthil
 
 The DevOps open hack event is designed to foster learning via implementing DevOps practices with a series of challenges.
 
