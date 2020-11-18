@@ -26,5 +26,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/devopsoh/api-trips:${{ github.run_number}} --build-arg build_version=${{github.run_number}} -f apis/trips/Dockerfile
-            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/devopsoh/api-trips:${{ github.run_number}}
+        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/devopsoh/api-trips:${{ github.run_number}} --build-arg build_version=${{github.run_number}} -f apis/trips/Dockerfile
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/devopsoh/api-trips:${{ github.run_number}}
