@@ -3,6 +3,7 @@ FROM golang:1.11.1 AS gobuild
 WORKDIR /go/src/github.com/senthilgurusamy/openhack-devops-team/apis/trips
 
 COPY . .
+RUN ls -la
 
 ENV GO111MODULE=on
 
