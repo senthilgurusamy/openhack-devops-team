@@ -36,26 +36,6 @@ jobs:
       working-directory: apis/trips
       run: go install -v main.go
     
- steps:
-    - name: 'Checkout GitHub Action'
-      uses: actions/checkout@v2
-          
-      - name: 'Login via Azure CLI'
-          uses: azure/login@v1
-          with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
-        - name: 'Build and push image'
-          uses: azure/docker-login@v1
-          with:
-            login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-            username: ${{ secrets.REGISTRY_USERNAME }}
-            password: ${{ secrets.REGISTRY_PASSWORD }}
-        - run: |
-            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
-            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
-
-              
     - name: Test
       working-directory: apis/trips/tests
       run: go test -v healthroute_test.go
