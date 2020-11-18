@@ -1,4 +1,4 @@
-name: FirstBuildandTest1
+name: FirstBuildandTest2
 
 on:
   push:
@@ -24,6 +24,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Get dependencies
+      
       run: |
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
