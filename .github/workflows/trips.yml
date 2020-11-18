@@ -1,4 +1,4 @@
-name: FirstBuildandTest6
+name: FirstBuildandTest7
 
 on:
   push:
@@ -33,7 +33,9 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v apis/trips/main.go
+      working-directory: apis/trips
+      run: go install -v main.go
 
     - name: Test
-      run: go test -v apis/trips/tests
+      working-directory: apis/trips/tests
+      run: go test -v healthroute_test.go
