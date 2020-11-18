@@ -8,7 +8,7 @@ ENV GO111MODULE=on
 
 RUN go get
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o apis/trips/main.go .
+RUN CGO_ENABLED=0 GOOS=linux go build -o apis/trips/main.go
 
 FROM alpine:3.8 AS gorun
 
