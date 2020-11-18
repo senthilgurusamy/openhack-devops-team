@@ -1,4 +1,4 @@
-name: FirstBuildandTest4
+name: FirstBuildandTest5
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v apis/trips
+      run: go build -v apis/trips/main.go
 
     - name: Test
       run: go test -v apis/trips/tests
