@@ -20,7 +20,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}      
       
     - name: 'Build and push image'
-      working-directory: apis/trips
       uses: azure/docker-login@v1
       with:
         login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
